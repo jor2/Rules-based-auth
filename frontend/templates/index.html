@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Health App</h1>
+      <p class="lead">
+        A Watson Health application that implements rules based authorization and authentication between microservices. It uses Istio to implement policies that enforce rules upon the microservices. Such as, to access the various backend services you need to include a JWT in the request headers when you are attempting to send a request to these services, otherwise you will be denied access. There is also policies defined such as only Doctors can access some of the services. This is done by checking the scope of the JWT, you are issued this JWT when you login and your role determining which Auth0 API you will connect to.
+        <br>
+        <br>
+        I have also extended Istio’s current functionality and implemented some of my own rules. As Istio is written in GO, I had to write some services in GO and then deploy them on Kubernetes. An example of one rule that I wrote would be to enforce that Doctors can only access patient records during the times of 9-5.
+      </p>
+    </div>
+{% endblock %}

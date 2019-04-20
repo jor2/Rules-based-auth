@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="container">
+      <br>
+      <br>
+      <h1>Patients</h1>
+      <br>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Patient ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Weight (kg)</th>
+            <th scope="col">Conditions</th>
+            <th scope="col">Update Patient</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ id }}</th>
+            <td>{{ fname }}</td>
+            <td>{{ lname }}</td>
+            <td>{{ age }}</td>
+            <td>{{ weight }}</td>
+            <td>
+            {% for condition in conditions %}
+                {{ condition }}<br>
+            {% endfor %}
+            </td>
+            <td><a href="/update_medical_history/{{ id }}"><button type="button" class="btn btn-primary">View</button></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+{% endblock %}

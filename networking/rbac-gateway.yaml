@@ -1,0 +1,57 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: rbac-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: rbac
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - rbac-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    - uri:
+        exact: /hello_world
+    - uri:
+        exact: /login
+    - uri:
+        prefix: /logout
+    - uri:
+        prefix: /logout
+    - uri:
+        prefix: /view_medical_history
+    - uri:
+        prefix: /update_medical_history
+    - uri:
+        prefix: /view_patients
+    - uri:
+        prefix: /view_users
+    - uri:
+        prefix: /test/view_patients
+    - uri:
+        prefix: /test_response
+    - uri:
+        prefix: /test/invoke_service_header
+    - uri:
+        prefix: /db/populate
+    route:
+    - destination:
+        host: frontend
+        port:
+          number: 5000

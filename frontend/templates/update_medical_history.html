@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Edit Patient</h1>
+  {% from "includes/_formhelpers.html" import render_field %}
+  <form method="POST" action="">
+    <div class="form-group">
+      {{ render_field(form.fname, class_="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ render_field(form.lname, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.age, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.weight, class_="form-control") }}
+    </div>
+    <p><input class="btn btn-primary" type="submit" value="Submit"></p>
+  </form>
+{% endblock %}

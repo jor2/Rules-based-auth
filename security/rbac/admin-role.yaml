@@ -1,0 +1,26 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRole
+metadata:
+  name: admin-user
+  namespace: default
+spec:
+  rules:
+  - services:
+    - "admin-backend.default.svc.cluster.local"
+    paths: ["*"]
+    methods: ["*"]
+---
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRoleBinding
+metadata:
+  name: admin-user-binding
+  namespace: default
+spec:
+  subjects:
+  - properties:
+      request.auth.claims[scope]: "Admin"
+  - properties:
+      request.auth.claims[scope]: "Doctor"
+  roleRef:
+    kind: ServiceRole
+    name: "admin-user"

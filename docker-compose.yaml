@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  frontend:
+    build: frontend
+    ports:
+      - "8001:5000"
+    image: jor2/frontend
+
+  backend:
+    build: backend
+    ports:
+      - "8002:5000"
+    image: jor2/backend
+
+  admin-backend:
+    build: admin-backend
+    ports:
+      - "8003:5000"
+    image: jor2/admin-backend
+
+  utils-backend:
+    build: utils-backend
+    ports:
+      - "8004:5000"
+    image: jor2/utils-backend
+
+  mongo:
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    image: mongo:latest
+    restart: always

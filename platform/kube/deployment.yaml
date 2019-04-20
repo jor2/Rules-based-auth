@@ -1,0 +1,158 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+    name: http
+  selector:
+    app: frontend
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+        version: v1
+    spec:
+      containers:
+        - name: frontend
+          image: jor2/frontend:latest
+          ports:
+          - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+    name: http
+  selector:
+    app: backend
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend
+        version: v1
+    spec:
+      containers:
+        - name: backend
+          image: jor2/backend:latest
+          ports:
+          - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-backend
+  labels:
+    app: admin-backend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+    name: http
+  selector:
+    app: admin-backend
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: admin-backend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: admin-backend
+        version: v1
+    spec:
+      containers:
+        - name: admin-backend
+          image: jor2/admin-backend:latest
+          ports:
+          - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: utils-backend
+  labels:
+    app: utils-backend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+    name: http
+  selector:
+    app: utils-backend
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: utils-backend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: utils-backend
+        version: v1
+    spec:
+      containers:
+        - name: utils-backend
+          image: jor2/utils-backend:latest
+          ports:
+          - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  selector:
+    name: mongo
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+      labels:
+        name: mongo
+        version: v1
+    spec:
+      containers:
+        - image: mongo:latest
+          name: mongo
+          ports:
+            - containerPort: 27017

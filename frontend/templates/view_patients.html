@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container">
+      <br>
+      <br>
+      <h1>Patients</h1>
+      <br>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Patient ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Medical History</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for patient in patients %}
+          <tr>
+            <th scope="row">{{ patient['id'] }}</th>
+            <td>{{ patient["fname"] }}</td>
+            <td>{{ patient["lname"] }}</td>
+            <td><a href="/view_medical_history/{{patient['id']}}"><button type="button" class="btn btn-primary">View</button></a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+{% endblock %}

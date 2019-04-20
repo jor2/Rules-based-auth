@@ -1,0 +1,13 @@
+apiVersion: authentication.istio.io/v1alpha1
+kind: Policy
+metadata:
+  name: auth-policy
+spec:
+  targets:
+    - name: backend
+    - name: admin-backend
+  origins:
+    - jwt:
+        issuer: "https://jor2.eu.auth0.com/"
+        jwksUri: "https://jor2.eu.auth0.com/.well-known/jwks.json"
+  principalBinding: USE_ORIGIN
