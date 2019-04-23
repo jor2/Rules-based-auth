@@ -163,4 +163,4 @@ I have also extended Istio’s current functionality and implemented some of my 
     
     ![alt text](assets/images/custom-adapter-logs.png "Custom adapter logs")
 
-Site is currently visible at: http://35.246.83.26
+Site is currently visible at: http://35.246.72.144/

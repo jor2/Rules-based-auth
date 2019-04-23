@@ -1,3 +1,5 @@
+// Used this https://medium.com/google-cloud/simple-istio-mixer-out-of-process-authorization-adapter-5f9363cd9bbc for building template.
+
 // nolint:lll
 // Generates the mygrpcadapter adapter's resource yaml. It contains the adapter's configuration, name, supported template
 // names (metric in this case), and whether it is session or no-session based.
