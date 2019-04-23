@@ -10,7 +10,10 @@ class PatientForm(Form):
     weight = StringField('Weight', validators=[validators.Length(min=1, max=4)])
 
 
-def invoke_service(service, page_name, id="", headers={}):
+# noinspection PyBroadException,PyBroadException
+def invoke_service(service, page_name, id="", headers=None):
+    if headers is None:
+        headers = {}
     url = create_url_for_service(page_name, id, service)
     try:
         res = requests.get(url, headers=headers)
@@ -57,6 +60,7 @@ def get_header_for_auth(role=None):
 
     response = invoke_service(service="utils-backend", page_name="api/generate_token/{role}".format(role=role))
 
+    # noinspection PyTypeChecker
     header['Authorization'] = "Bearer {token}".format(token=response["access_token"])
 
     return header

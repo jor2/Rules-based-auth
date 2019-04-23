@@ -119,7 +119,7 @@ func (s *MyGrpcAdapter) HandleAuthorization(ctx context.Context, r *authorizatio
 			}, nil
 		}
 	}
-	log.Infof("success, allow access to frontend")
+	log.Infof("success, allow access to frontend and utils backend")
 	return &v1beta1.CheckResult{
 		Status: status.OK,
 	}, nil

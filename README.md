@@ -39,7 +39,7 @@ I have also extended Istio’s current functionality and implemented some of my 
 
 6. You will now need to set your project to the one you previously created the cluster on. Run `gcloud projects list` to view all your projects associated with your account. Select your project with 
     ```bash
-    gcloud config set project <PROJECT NAME>
+    gcloud config set project `PROJECT NAME`
     ```
 
 7. Install kubectl 

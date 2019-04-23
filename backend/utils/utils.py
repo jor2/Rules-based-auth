@@ -36,7 +36,7 @@ def requires_auth(f):
     def decorated(*args, **kwargs):
         if requires_scope("Doctor"):
             current_hour = int(get_current_hour_gmt())
-            if current_hour >= 9 and current_hour < 17:
+            if 9 <= current_hour < 17:
                 return f(*args, **kwargs)
             else:
                 return "current hour {} is outside of range".format(current_hour)

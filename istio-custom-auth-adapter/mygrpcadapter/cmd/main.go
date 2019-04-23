@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	mygrpcadapter "istio-custom-auth-adapter/mygrpcadapter"
+	mygrpcadapter "istio.io/istio/mixer/adapter/mygrpcadapter"
 )
 
 func main() {

@@ -2,7 +2,7 @@ FROM golang:1.11 as builder
 WORKDIR .
 COPY ./ .
 RUN CGO_ENABLED=0 GOOS=linux \
-    go build -a -installsuffix cgo -v -o bin/mygrpcadapter ./istio-custom-auth-adapter/mygrpcadapter/cmd
+    go build -a -installsuffix cgo -v -o bin/mygrpcadapter ./src/istio.io/istio/mixer/adapter/mygrpcadapter/cmd/
 
 FROM alpine:3.8
 RUN apk --no-cache add ca-certificates
