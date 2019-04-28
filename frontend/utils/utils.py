@@ -10,7 +10,7 @@ class PatientForm(Form):
     weight = StringField('Weight', validators=[validators.Length(min=1, max=4)])
 
 
-# noinspection PyBroadException,PyBroadException
+# noinspection PyBroadException
 def invoke_service(service, page_name, id="", headers=None):
     if headers is None:
         headers = {}

@@ -1,6 +1,6 @@
-# Rules-based-auth
+## Deployment Diagram
 
-![alt text](assets/images/architecture-diagram.png "Architecture Diagram")
+![alt text](assets/images/deployment-diagram.png "Deployment Diagram")
 
 ## Short Description Of Project:
 
