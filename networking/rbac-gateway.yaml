@@ -41,11 +41,9 @@ spec:
     - uri:
         prefix: /view_patients
     - uri:
-        prefix: /view_users
+        prefix: /test/view_users
     - uri:
         prefix: /test/view_patients
-    - uri:
-        prefix: /test_response
     - uri:
         prefix: /test/invoke_service_header
     - uri:

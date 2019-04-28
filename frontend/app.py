@@ -124,8 +124,8 @@ def test_headers():
     return jsonify(session["jwt_header"])
 
 
-@app.route("/view_users/", methods=['GET'])
-def view_users():
+@app.route("/test/view_users/", methods=['GET'])
+def test_view_users():
     users = invoke_service(page_name="view_users", service="utils-backend")
     return jsonify(users)
 
