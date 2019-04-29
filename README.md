@@ -1,6 +1,6 @@
 ## Deployment Diagram
 
-![alt text](assets/images/deployment-diagram.png "Deployment Diagram")
+![alt text](assets/simages/deployment-diagram.png "Deployment Diagram")
 
 ## Short Description Of Project:
 
@@ -24,6 +24,10 @@ I have also extended Istio’s current functionality and implemented some of my 
 - Google cloud (google kubernetes engine)
 - Minikube
 - Docker-compose
+
+## Lifecycle Of A Doctor Logging In [Successful Scenario]
+
+![alt text](assets/images/login-sequence.png "Login Sequence")
 
 # Deployment
 ## Google Kubernetes Engine
