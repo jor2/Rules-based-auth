@@ -1,6 +1,6 @@
 ## Deployment Diagram
 
-![alt text](assets/simages/deployment-diagram.png "Deployment Diagram")
+![alt text](assets/images/deployment-diagram.png "Deployment Diagram")
 
 ## Short Description Of Project:
 
