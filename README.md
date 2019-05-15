@@ -183,7 +183,7 @@ Site is currently visible at: < insert ingress IP >
 
 This app is designed to be run in Kubernetes, but you could alternatively also run using Docker compose, however, you will lose the functionality of Kubernetes and Istio.
 ```bash
-    docker-compose up --build
+docker-compose up --build
 ```
 
 view frontend at http://localhost:8001/ after building app.
