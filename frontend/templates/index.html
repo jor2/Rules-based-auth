@@ -9,7 +9,6 @@
 
         <ul>
           <li>4 Python micro-services.</li>
-          <li>Tea</li>
           <li>1 MongoDB micro-service.</li>
           <li>1 Go micro-service to extend Istio's current functionality and allow me to add my own rules.</li>
         </ul>
@@ -26,6 +25,9 @@
         I have also extended Istio’s current functionality and implemented some of my own rules. As Istio is written
           in GO, I had to write some services in GO and then deploy them on Kubernetes. An example of one rule that I
           wrote would be to enforce that Doctors can only access patient records during the times of 9-5.
+
+        This app is designed to be run in Kubernetes, but you could alternatively also run using Docker compose, however, you will
+        lose the functionality of Kubernetes and Istio.
       </p>
     </div>
 {% endblock %}

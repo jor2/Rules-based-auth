@@ -18,6 +18,8 @@ Tokens are issued via one of 3 Auth0 API's I have created depending on the role 
 
 Deployed on Google Kubernetes Engine (GKE).
 
+This app is designed to be run in Kubernetes, but you could also run using Docker compose, however, you will lose the functionality of Kubernetes and Istio.
+
 ## Technologies used:
 - Python
 - Flask
@@ -177,4 +179,11 @@ Deployed on Google Kubernetes Engine (GKE).
     
     ![alt text](assets/images/custom-adapter-logs.png "Custom adapter logs")
 
-Site is currently visible at: http://35.246.72.144/
+Site is currently visible at: < insert ingress IP >
+
+This app is designed to be run in Kubernetes, but you could alternatively also run using Docker compose, however, you will lose the functionality of Kubernetes and Istio.
+```bash
+    docker-compose up --build
+```
+
+view frontend at http://localhost:8001/ after building app.
