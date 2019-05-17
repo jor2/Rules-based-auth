@@ -65,7 +65,7 @@ This app is designed to be run in Kubernetes, but you could also run using Docke
 
 8. Set compute zone (this should correspond to the region you chose when creating your cluster, if you set it wrong it will give you an error later and suggest which region you might have meant to set instead. So just set it again with this region if you come across that error.) 
     ```bash
-    config set compute/zone europe-west2-a
+    gcloud config set compute/zone europe-west2-a
     ```
 
 9. You should be able to view your cluster with the command 
