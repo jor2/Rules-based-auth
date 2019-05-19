@@ -187,3 +187,6 @@ docker-compose up --build
 ```
 
 view frontend at http://localhost:8001/ after building app.
+
+### Project Showcase
+[![Project Showcase](http://img.youtube.com/vi/oZF5WdPio6c/0.jpg)](http://www.youtube.com/watch?v=oZF5WdPio6c)
